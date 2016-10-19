@@ -1,0 +1,16 @@
+{
+  "name": "informationapp",
+  "version": "0.0.1",
+  "description": "user information app - webserver",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antony",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta6"
+  }
+}

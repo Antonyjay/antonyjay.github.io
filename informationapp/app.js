@@ -22,6 +22,10 @@ app.get ('/search', (request, response)=>{
 	response.render ('search')
 })
 
+app.get ('/forms', (request,response)=> {
+	response.render ('forms')
+})
+
 
 app.post ('/search', function (request,response){
 	let searchResults = []
@@ -37,6 +41,35 @@ app.post ('/search', function (request,response){
 	})	
 })
 
+app.post ('/forms', function (request, response){
+	let newObject = {
+		firstname: 	request.body.firstname,
+		lastname: 	request.body.lastname,
+		email: 		request.body.email
+	}
+	fs.readFile (__dirname + '/users.json', (error,data)=>{
+		if (error) throw error
+
+		let parsedData = JSON.parse(data)
+		parsedData.push (newObject)
+		let stringifiedData = JSON.stringify (parsedData)
+
+		fs.writeFile('users.json', stringifiedData, (error)=>{
+			if (error) throw error
+		})
+		response.redirect ('/users')
+	})	
+})
+
+
+
 app.listen(8000, ()=>{
 	console.log ('server running')
 })
+
+
+
+
+
+
+

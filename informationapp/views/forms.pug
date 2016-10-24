@@ -1,0 +1,17 @@
+html
+	head
+	body
+		form(method='post', action='/forms')
+			| Firstname:
+			br
+			input(type="text", name="firstname")
+			br
+			| Lastname:
+			br
+			input(type="text", name="lastname")
+			br
+			| Email: 
+			br
+			input(type="text", name="email")
+			br
+			input.button(type="submit")

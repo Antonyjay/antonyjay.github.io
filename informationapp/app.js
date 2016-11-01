@@ -22,52 +22,93 @@ app.get ('/search', (request, response)=>{
 	response.render ('search')
 })
 
-app.get ('/forms', (request,response)=> {
-	response.render ('forms')
-})
-
-
-app.post ('/search', function (request,response){
-	let searchResults = []
+app.post ('/searchData', (request, response)=>{
+	let autoNames = [] 
 	fs.readFile (__dirname + '/users.json', (error,data)=>{
 		if (error) throw error
-			let parsedData = JSON.parse(data)
+		let parsedData = JSON.parse(data)
 		for (let i = parsedData.length - 1; i>=0; i--) {
-			if (parsedData[i].firstname == request.body.name){
-				searchResults.push(parsedData[i])
+			if (parsedData[i].firstname.indexOf(request.body.input) >= 0){
+				console.log('JAAAA IK WERK')
+				autoNames.push(parsedData[i].firstname)
 			}
 		}
-		response.render ('result', {user: searchResults})
-	})	
-})
+		response.send (autoNames)
+	})
+// app.get ('/forms', (request,response)=> {
+// 	response.render ('forms')
+})	
 
-app.post ('/forms', function (request, response){
-	let newObject = {
-		firstname: 	request.body.firstname,
-		lastname: 	request.body.lastname,
-		email: 		request.body.email
-	}
-	fs.readFile (__dirname + '/users.json', (error,data)=>{
-		if (error) throw error
-
-		let parsedData = JSON.parse(data)
-		parsedData.push (newObject)
-		let stringifiedData = JSON.stringify (parsedData)
-
-		fs.writeFile('users.json', stringifiedData, (error)=>{
+	app.post ('/forms', function (request, response){
+		let newObject = {
+			firstname: 	request.body.firstname,
+			lastname: 	request.body.lastname,
+			email: 		request.body.email
+		}
+		fs.readFile (__dirname + '/users.json', (error,data)=>{
 			if (error) throw error
-		})
-		response.redirect ('/users')
-	})	
-})
+
+				let parsedData = JSON.parse(data)
+			parsedData.push (newObject)
+			let stringifiedData = JSON.stringify (parsedData)
+
+			fs.writeFile('users.json', stringifiedData, (error)=>{
+				if (error) throw error
+			})
+			response.redirect ('/users')
+		})	
+	})
 
 
 
-app.listen(8000, ()=>{
-	console.log ('server running')
-})
+	app.listen(8000, ()=>{
+		console.log ('server running')
+	})
 
 
+// now, write a function that finds all the indexes of where the value is located and returns them in an array, and if nothing is found, returns -1
+// example: ['apple', 'orange', 'orange', 'pineapple']
+// 'orange' returns [1,2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// app.post ('/search', function (request,response){
+// 	let searchResults = []
+// 	fs.readFile (__dirname + '/users.json', (error,data)=>{
+// 		if (error) throw error
+// 			let parsedData = JSON.parse(data)
+// 		for (let i = parsedData.length - 1; i>=0; i--) {
+// 			if (parsedData[i].firstname == request.body.name){
+// 				searchResults.push(parsedData[i])
+// 			}
+// 		}
+// 		response.render ('result', {user: searchResults})
+// 	})	
+// })
+// let arraySearcher = ( array, value ) => {
+// 	let emptyarray = []
+// 	for (var i = 0; i < array.length; i++) {
+// 		if (array[i] === value) {
+// 			emptyarray.push (i)
+// 		}
+// 	}
+// 	return emptyarray
+// }
 
 
 

@@ -13,16 +13,20 @@ html
 		script(src="https://code.jquery.com/jquery-3.1.1.js")
 		script(src="http://code.jquery.com/ui/1.12.1/jquery-ui.js")
 		script.
+			let timer = 0 
 			$("#keyup").on('input',function(e){
 				e.preventDefault()
 				let userInput = {input: $(this).val()}
-					$.post ('/searchData', userInput, (data, status)=> {
+				let timeNow = Date.now()
+					if (timeNow - timer > 1000){
+						$.post ('/searchData', userInput, (data, status)=> {
 						$('#options').empty()
 							for (let i = data.length - 1; i>=0; i--) {
 								$("#options").append('<option>' + data + '</option>')
 							}
+							timer = Date.now()
 						})
-				console.log ('hello')
+					}
 			})
 
 

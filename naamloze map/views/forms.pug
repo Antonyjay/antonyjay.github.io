@@ -1,0 +1,47 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+
+		nav
+			.nav-wrapper
+				a.brand-logo(href='#') BulletinBaby
+				ul#nav-mobile.right.hide-on-med-and-down
+					li
+						a(href='forms') Home
+					li
+						a(href='results') Old messages
+				
+
+
+		main
+			form(method='post', action='/forms', autocomplete="off").col.s12
+				.row
+					.input-field.col.s6
+						input#first_name.validate(placeholder='Title', type='text', name= "title")
+						label(for='first_name') 
+				.row
+					.input-field.col.s12
+						input#message.validate(placeholder='Message', type='text', name="message")
+						label(for='message') 
+				.ro1
+					input.waves-effect.waves-light.btn(type="submit" value= 'submit')
+
+		footer.page-footer
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text This tool is very usefull 
+						p.grey-text.text-lighten-4 How awesome is it that you can leave a comment?!
+					
+			.footer-copyright
+				.container
+					| © 2016 Build by Antony Jay Cuvalay
+					a.grey-text.text-lighten-4.right(href='#!') antonycuvalay@hotmail.com
+
+
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')
+
+

@@ -1,0 +1,43 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+		nav
+			.nav-wrapper
+				a.brand-logo(href='#') BulletinBaby
+				ul#nav-mobile.right.hide-on-med-and-down
+					li
+						a(href='forms') Home
+					li
+						a(href='results') Old messages
+
+	main.collection
+		div.container
+			each thing in posts 
+
+					.thing.flow-text.center#boldtext  #{thing.title} 
+					.thing.collection-item.flow-text.center #{thing.body}
+					br
+
+
+	footer.page-footer
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text This tool is very usefull 
+						p.grey-text.text-lighten-4 How awesome is it that you can leave a comment?!
+					
+			.footer-copyright
+				.container
+					| © 2016 Build by Antony Jay Cuvalay
+					a.grey-text.text-lighten-4.right(href='#!') antonycuvalay@hotmail.com
+
+
+
+
+
+
+
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')

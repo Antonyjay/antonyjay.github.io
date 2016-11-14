@@ -36,7 +36,7 @@ app.get ('/results', (request,response) =>{
 })
 
 app.post ('/forms', function (request, response){
-	pg.connect('postgres://Antony:postgres@localhost/bssa', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
 		if (err) {
 			console.log(err)
 		}

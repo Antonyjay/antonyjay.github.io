@@ -16,8 +16,11 @@ app.get ('/forms', (request,response)=> {
 	response.render ('forms')
 })
 
+console.log(process.env.POSTGRES_USERNAME)
+console.log(process.env.POSTGRES_PASSWORD)
+
 app.get ('/results', (request,response) =>{
-	pg.connect('postgres://Antony:postgres@localhost/bssa', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
 		if (err) {
 			console.log (err)
 		}

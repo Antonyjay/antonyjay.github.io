@@ -1,0 +1,47 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+		nav
+			.nav-wrapper
+				a.brand-logo(href='/') Leuk Blogje
+				ul#nav-mobile.right.hide-on-med-and-down
+					li
+						a(href='/ownposts') View my posts
+					li
+						a(href='/allposts') View all posts
+					li
+						a(href='/profile') Make a Post	
+					li
+						a(href='/logout') log out	
+	main
+		each thing in posts
+
+			div.row
+				div.col.s6.offset-s3
+					div.card.darken-1
+						div.card-content
+							h3 #{thing.title} 
+							h5 #{thing.message}
+							p.commentsection
+								form(action='/comments' method='post' id=thing.id)
+									input.comments(name='comment' placeholder='Leave a comment' type='text')
+									input(name="post_id", value=thing.id, type="text", hidden)
+									input(type="submit", hidden)
+
+	footer.page-footer
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text This tool is very usefull 
+						p.grey-text.text-lighten-4 How awesome is it that you can leave a comment?!
+					
+			.footer-copyright
+				.container
+					| © 2016 Build by Antony Jay Cuvalay
+					a.grey-text.text-lighten-4.right(href='#!') antonycuvalay@hotmail.com
+
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')
+	script(src= '/src/js/main.js')

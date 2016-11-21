@@ -1,0 +1,35 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+		nav
+			.nav-wrapper
+				a.brand-logo.left(href='/') lekker blogje
+				ul#nav-mobile.right
+					li
+						a(href='/ownposts') View my posts
+					li
+						a(href='/allposts') View all posts
+					li
+						a(href='/profile') Make a Post	
+					li
+						a(href='/logout') log out
+	div.row
+		div.col.s9.offset-s1
+			h2 What did you wrote before? 
+	main
+						
+		each thing in posts 
+			div.row
+				div.col.s6.offset-s3
+						div.card.darken-1
+							div.card-content
+								
+								h3 #{thing.title}
+
+								h5 #{thing.message}
+
+			
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')

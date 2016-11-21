@@ -20,7 +20,7 @@ console.log(process.env.POSTGRES_USERNAME)
 console.log(process.env.POSTGRES_PASSWORD)
 
 app.get ('/results', (request,response) =>{
-	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
 		if (err) {
 			console.log (err)
 		}
@@ -36,7 +36,7 @@ app.get ('/results', (request,response) =>{
 })
 
 app.post ('/forms', function (request, response){
-	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
 		if (err) {
 			console.log(err)
 		}

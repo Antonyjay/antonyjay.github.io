@@ -1,0 +1,47 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+		nav
+			.nav-wrapper
+				a.brand-logo.left(href='/') lekker blogje
+				ul#nav-mobile.right
+					li
+						a(href='/ownposts') View my posts
+					li
+						a(href='/allposts') View all posts
+					li
+						a(href='/profile') Make a Post
+					li
+						a(href='/logout') log out
+	main
+		div.row
+			div.col.s6.offset-s3
+				h1 Post something here
+			div.col.s6.offset-s3
+				div.card.darken-1
+					div.card-content.white-text
+						form(action='/fillPostTable' method='post')
+								
+									input#email(name='title' placeholder='title' required)
+									br
+									input#password(name='message' placeholder = 'What do you want to share with the world?' required)
+									input#submitbutton.btn.waves-effect.waves(type='submit')
+
+		h2#error-message= messag
+
+	footer.page-footer
+		.container
+			.row
+				.col.l6.s12
+					h5.white-text This tool is very usefull 
+					p.grey-text.text-lighten-4 How awesome is it that you can leave a comment?!
+				
+		.footer-copyright
+			.container
+				| © 2016 Build by Antony Jay Cuvalay
+				a.grey-text.text-lighten-4.right(href='#!') antonycuvalay@hotmail.com
+
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')

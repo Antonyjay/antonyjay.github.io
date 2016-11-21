@@ -1,0 +1,44 @@
+html
+	head
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+		link(rel='stylesheet', href='/src/css/main.css', type='text/css')
+	body
+		nav
+			.nav-wrapper
+				a.brand-logo.left(href='/') lekker blogje
+				ul#nav-mobile.right
+					li
+						a(href='/') Login
+		
+		h2 If you want an account you need to register!
+		h4
+			div.row
+				div.col.s6.offset-s3
+				
+						div.card.darken-1
+							div.card-content.white-text
+								form(action='/registration' method='post')
+										input#firstname(name='firstname' placeholder= 'firstname' type='text' required)
+										br
+										input#email(name='email' type= 'email' placeholder='email' required)
+										br
+										input#password(name='password' placeholder= 'password' type='password' required)
+										br
+										input#submitbutton.btn.waves-effect.waves(type='submit')
+		main
+
+	footer.page-footer
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text This tool is very usefull 
+						p.grey-text.text-lighten-4 How awesome is it that you can leave a comment?!
+					
+			.footer-copyright
+				.container
+					| © 2016 Build by Antony Jay Cuvalay
+					a.grey-text.text-lighten-4.right(href='#!') antonycuvalay@hotmail.com
+
+	script(src='/src/js/jquery-3.1.1.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js')
+	script(src= '/src/js/main.js')

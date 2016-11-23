@@ -1,0 +1,1 @@
+In this project (without front-end) it is possible to fill your email adress and name, which will be stored in a json file. It is also possible to enter a  name in a searchbar. The input will be compared to an existing database of clients so that the search is autocompleted if it is an existing name. 

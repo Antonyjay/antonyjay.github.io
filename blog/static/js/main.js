@@ -1,11 +1,8 @@
-// $.post('/comments', { name: "Mentor" }, function(data) {
-// 	$(".result").html(data)
-// })
+
+
 
 $( 'form').submit(function(event){
 	event.preventDefault()
-	console.log(event)
-	console.log (event.target[0].value)
 	$.post('/comments', {
 		comment: event.target[0].value,
 		post_id: event.target[1].value

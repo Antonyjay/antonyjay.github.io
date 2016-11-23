@@ -1,8 +1,10 @@
+$maincolor: lightgreen;
+
 body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	color: lightgreen;
+	color: $maincolor;
 }
 
 main {
@@ -10,41 +12,38 @@ main {
 }
 
 #boldtext {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 h1 {
-	color: lightgreen;
+	color: $maincolor;
 }
 
 #email {
-	color: lightgreen;
+	color: $maincolor;
 }
 
 #password {
-	color: lightgreen;
+	color: $maincolor;
 }
 
-#logbut{
-	color: lightgreen;
+#logbut {
+	color: $maincolor;
 }
 
 input {
-	color: lightgreen;
+	color: $maincolor;
 }
 
 h2 {
-	color: lightgreen;
+	color: $maincolor;
 }
-
 
 #submitbutton {
 	color: white;
 }
+
 .btn, .btn-large{
-	background-color: lightgreen;
-}
-.waves-effect {
 	background-color: lightgreen;
 }
 

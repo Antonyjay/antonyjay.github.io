@@ -2,10 +2,7 @@ const Sequelize = 	require ('sequelize')
 const express 	=	require ('express')
 const bodyParser=	require ('body-parser')
 const session 	=	require ('express-session')
-
 const router 	= express.Router()
-
-
 const db = require ('../modules/database')
 
 // rendering the post table
@@ -26,6 +23,7 @@ router.get ('/allposts', bodyParser.urlencoded({extended: true}), function (requ
 	}
 })
 
+//rendering the message page
 router.get ('/message', function (request, response) { 
 	db.Post.findAll ({
 		where: {
@@ -36,6 +34,7 @@ router.get ('/message', function (request, response) {
 	})
 })
 
+//rendering the ownpost by including the necessary info from the database
 router.get ('/ownposts', function (request, response) {
 	let user = request.session.user
 	if (user === undefined) {
@@ -55,6 +54,7 @@ router.get ('/ownposts', function (request, response) {
 	}
 })
 
+//filling the comments page and linking it to a user and message
 router.post ('/comments',  bodyParser.urlencoded({extended: true}), function (request,response){
 	db.User.findOne({
 		where: {
@@ -69,6 +69,7 @@ router.post ('/comments',  bodyParser.urlencoded({extended: true}), function (re
 	response.send (request.body.comment)
 })
 
+//filling the post table
 router.post ('/fillPostTable',  bodyParser.urlencoded({extended: true}), function (request,response){
 	db.Post.create({
 		title: request.body.title,

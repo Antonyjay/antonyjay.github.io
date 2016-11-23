@@ -26,11 +26,7 @@ app.use (session ({
 app.set ('views', __dirname + '/views')
 app.set ('view engine', 'pug')
 
-
-
-
-
-
+//setting up the server
 var server = app.listen(8000, function () {
 	console.log('server up and running')
 });

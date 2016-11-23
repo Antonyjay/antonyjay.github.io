@@ -20,3 +20,4 @@ express-session
 pg
 pug
 sequelize
+sass

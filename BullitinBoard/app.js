@@ -16,11 +16,8 @@ app.get ('/forms', (request,response)=> {
 	response.render ('forms')
 })
 
-console.log(process.env.POSTGRES_USERNAME)
-console.log(process.env.POSTGRES_PASSWORD)
-
 app.get ('/results', (request,response) =>{
-	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/blog', function(err, client, done){
 		if (err) {
 			console.log (err)
 		}
@@ -36,35 +33,20 @@ app.get ('/results', (request,response) =>{
 })
 
 app.post ('/forms', function (request, response){
-	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/bulletinboard', function(err, client, done){
+	pg.connect('postgres://'+ process.env.POSTGRES_USERNAME +':' + process.env.POSTGRES_PASSWORD + '@localhost/blog', function(err, client, done){
 		if (err) {
 			console.log(err)
 		}
 		client.query("insert into messages (title, body) values (' "+ request.body.title +" ',' "+ request.body.message +"' )", function(err, result) {
-				if (err){
-					console.log (err)
-				}
-				 done()
-				 pg.end()
-				 response.redirect ('/results')
-			})
+			if (err){
+				console.log (err)
+			}
+			done()
+			pg.end()
+			response.redirect ('/results')
+		})
 	})
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(8000, ()=>{
 	console.log ('server running')

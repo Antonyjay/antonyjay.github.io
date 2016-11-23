@@ -16,17 +16,15 @@ html
 
 
 		main
-			form(method='post', action='/forms', autocomplete="off").col.s12
-				.row
-					.input-field.col.s6
-						input#first_name.validate(placeholder='Title', type='text', name= "title")
-						label(for='first_name') 
-				.row
-					.input-field.col.s12
-						input#message.validate(placeholder='Message', type='text', name="message")
-						label(for='message') 
-				.ro1
-					input.waves-effect.waves-light.btn(type="submit" value= 'submit')
+			div.row
+				div.col.s6.offset-s3
+					
+							form(method='post', action='/forms', autocomplete="off").col.s12
+								input#first_name.validate(placeholder='Title', type='text', name= "title")
+								label(for='first_name') 
+								input#message.validate(placeholder='Message', type='text', name="message")
+								label(for='message') 
+								input.waves-effect.waves-light.btn(type="submit" value= 'submit')
 
 		footer.page-footer
 			.container

@@ -1,0 +1,112 @@
+doctype html
+html
+	head
+		- var title = 'Register'
+		include ./templates/head.pug
+	
+	body
+		include ./templates/nav.pug
+
+		main
+			div.ui.container
+				div.ui.stackable.grid
+					//- Empty column for offset
+					div.three.wide.column 
+					div.ten.wide.column
+						h1 Register your account
+						form.ui.form(method="post")
+							h4.ui.dividing.header Account Information
+							div.field
+								label Username
+								input(type="text" name="username" placeholder="Username")
+							
+							div.field
+								label Password
+								div.two.fields
+									div.field
+										input(type="password" name="password" placeholder="Password")
+									div.field
+										input(type="password" name="confirm_password" placeholder="Confirm Password")
+
+							h4.ui.dividing.header Personal Information
+							div.field
+								label Name
+									div.two.fields
+										div.field
+											input(type="text" name="firstname" placeholder="First Name")
+										div.field
+											input(type="text" name="lastname" placeholder="Last Name")
+							div.field
+								label Email
+								input(type="text" name="email" placeholder="Email")
+
+							button.ui.button Register
+							div.ui.error.message
+							if error
+								p #{error}
+
+		include ./templates/footer.pug
+
+		include ./templates/scripts.pug
+		script.
+			$(document).ready(function() {
+				$('select.dropdown').dropdown()
+				$('.ui.radio.checkbox').checkbox()
+				
+				daysOptions()
+				monthOptions()
+				yearOptions()
+
+				function daysOptions () {
+					var options = ""
+					for (var day = 1; day <= 31; day++) {
+						options += '<option value="'+day+'">'+ day +"</option>"
+					}
+					document.getElementById("day").innerHTML = options;
+				}
+
+				function monthOptions () {
+					// Get Months
+					var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+					var options = "";
+					for(var i = 0 ; i <= months.length; i++){
+					  options += '<option value="'+months[i]+'">'+ months[i] +'</option>';
+					}
+					document.getElementById("month").innerHTML = options;
+				}
+
+				function yearOptions () {
+					// Get years from 1900 to now
+					var start = 1900;
+					var end = new Date().getFullYear();
+					var options = "";
+					for (var year = end; year >= start; year--) {
+						options += '<option value="'+year+'">'+ year +'</option>';
+					}
+					document.getElementById("year").innerHTML = options;
+				}
+			})
+		script.
+			// Script to do data validation front end
+			//- $('.ui.form').form({
+			//- 	fields: {
+			//- 		username: {
+			//- 		identifier: 'username',
+			//- 			rules: [{
+			//- 				type: 'empty',
+			//- 				prompt: 'Please enter a username'		
+			//- 			}]
+			//- 		},
+			//- 		password: {
+			//- 			identifier: 'password',
+			//- 			rules: [{
+			//- 				type: 'empty',
+			//- 				prompt: 'Please enter a password'
+			//- 			},
+			//- 			{
+			//- 				type: 'minLength[8]',
+			//- 				prompt: 'Password must be at least {ruleValue} characters'
+			//- 			}]
+			//- 		}
+			//- 	}
+			//- });

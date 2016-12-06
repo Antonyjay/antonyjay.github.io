@@ -3,6 +3,7 @@ const fs 		= require ('fs')
 const app		= express ()
 const bodyParser= require ('body-parser')
 
+//enabeling the bodyparser
 app.use(bodyParser.urlencoded({
 	extended: true
 }));

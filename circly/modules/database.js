@@ -22,10 +22,17 @@ db.User = db.conn.define ('user', {
 	lastName: 		sequelize.STRING,
 })
 
+db.Bulk = db.conn.define ('bulk', {
+	latitude:       sequelize.STRING,
+	longitude:      sequelize.STRING , 
+	title:   		sequelize.STRING,
+	summary:     	sequelize.TEXT,
+	picture: 		sequelize.STRING
+})
+
+
 
 // Synchronize database
-
-
 db.conn.sync({force:true}).then( conn =>{
 
 	console.log('Database sync successful')

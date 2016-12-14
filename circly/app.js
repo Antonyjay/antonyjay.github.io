@@ -1,10 +1,10 @@
 // Require modules
 const express 		= require('express')
-const Sequelize = 	require ('sequelize')
+const Sequelize 	= require ('sequelize')
 const bodyParser	= require('body-parser')
 const session 		= require('express-session')
 const dotenv 		= require('dotenv').load()
-const app = express()
+const app 			= express()
 
 // Set view engine to pug
 app.set('view engine', 'pug')
@@ -22,14 +22,17 @@ app.use(session({
 	saveUninitialized: true
 }))
 
-// // Require routes
-// app.use('/', require( __dirname + '/routes/login'))
+// Require routes
+
 app.use('/', require(__dirname + '/routes/register'))
 app.use('/', require(__dirname + '/routes/maps'))
+app.use('/', require(__dirname + '/routes/submitbulk'))
 
 app.get('/', (req, res) => {
 	res.render('index', {user:req.session.user})
 })
+
+
 
 // Listen on localhost:8000
 app.listen(8000, () => {

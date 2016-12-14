@@ -107,3 +107,7 @@ footer {
 .summary {
   white-space: pre-wrap; 
 }
+
+#map {
+    height: 600px;
+}

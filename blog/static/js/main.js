@@ -1,7 +1,7 @@
 
 
 
-$( 'form').submit(function(event){
+$( '#commentform').submit(function(event){
 	event.preventDefault()
 	$.post('/comments', {
 		comment: event.target[0].value,

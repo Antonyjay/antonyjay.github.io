@@ -25,7 +25,7 @@ html
 							h3 #{thing.title} 
 							h5 #{thing.message}
 							p.commentsection
-								form(action='/comments' method='post' id=thing.id)
+								form#commentform(action='/comments' method='post' id=thing.id)
 									input.comments(name='comment' placeholder='Leave a comment' type='text')
 									input(name="post_id", value=thing.id, type="text", hidden)
 									input(type="submit", hidden)

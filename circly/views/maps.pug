@@ -1,0 +1,23 @@
+doctype html
+head
+	- var title = "Welcome"
+	include ./templates/head.pug
+
+
+	body
+		include ./templates/nav.pug
+		main
+			div.ui.container
+				div.ui.stackable.grid
+					//- Empty column for offset
+					div.three.wide.column 
+					div.ten.wide.column
+						div#map
+
+
+		footer
+			include ./templates/footer.pug
+
+
+		include ./templates/scripts.pug
+		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDIrX88u0PBiF2-_o1YXPZc3VBZsCC3vYc&v=3&callback=initMap')

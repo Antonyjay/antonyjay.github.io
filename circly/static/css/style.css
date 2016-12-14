@@ -1,0 +1,113 @@
+/* Style sheet for feed.pug
+*/
+#header {
+	padding-top: 25px;
+	padding-bottom: 50px;
+}
+
+/* Style sheet for header.pug
+*/
+
+header {
+	margin-bottom: 75px;
+}
+
+/* Style sheet for footer.pug
+*/
+
+footer {
+	margin-top: 50px;
+}
+
+.ui.center.aligned.container {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+/* Style sheet for index.pug
+*/
+
+.introduction {
+	margin-top: -30px;
+	margin-bottom:100px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding-bottom: 400px;
+	background-color: black;
+	color: white;
+}
+	/*justify-content: center;
+}*/
+
+.introduction {
+    height: 10em;
+    position: relative }
+.introduction h1 {
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+.introduction h1{
+	font-size: 300%
+}
+
+.introduction p {
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+.login h3 {
+    margin: 0;
+    color: black;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+/* Style from user_profile*/
+/*#user-info {
+	margin-left: 15px;
+}
+*/
+.iconalign {
+	position: absolute;
+	left: 5px;
+}
+
+/* Style from user_profile*/
+/*#user-info {
+	margin-left: 15px;
+}
+*/
+.iconalign {
+	position: absolute;
+	left: 5px;
+}
+
+.addpad {
+	padding-left: 15px !important;
+}
+
+#editprofilebutton {
+	margin-top: 50px;
+}
+
+.summary {
+  white-space: pre-wrap; 
+}
+
+#map {
+    height: 600px;
+}

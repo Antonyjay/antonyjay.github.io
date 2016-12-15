@@ -23,8 +23,8 @@ db.User = db.conn.define ('user', {
 })
 
 db.Bulk = db.conn.define ('bulk', {
-	latitude:       sequelize.STRING,
-	longitude:      sequelize.STRING , 
+	latitude:       sequelize.FLOAT,
+	longitude:      sequelize.FLOAT, 
 	title:   		sequelize.STRING,
 	summary:     	sequelize.TEXT,
 	picture: 		sequelize.STRING
@@ -44,6 +44,22 @@ db.conn.sync({force:true}).then( conn =>{
 		firstName: 		"Antony",
 		lastName: 		"Cuv",
 		email: 			"g@gmail.com",
+	})
+
+	db.Bulk.create({
+		latitude: 	'52.3411818',
+		longitude: 	'4.8238265',
+		title: 		'HOOOI',
+		summary: 	'Hoe is het',
+		picture: 	'0cdce8b6a0f08839f379bced61162dae'
+	})
+
+	db.Bulk.create({
+		latitude: 	'52.373801',
+		longitude: 	'4.890935',
+		title: 		'Whatsuppp',
+		summary: 	'goeiemorguh',
+		picture: 	'8aa8259065d812a3ef2a40baddce5478'
 	})
 
 	

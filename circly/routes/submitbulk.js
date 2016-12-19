@@ -38,4 +38,9 @@ router.route('/getdots')
 	})
 })
 
+router.route('/wittebank')
+.get((req,res)=> {
+	res.render('wittebank')
+})
+
 module.exports = router

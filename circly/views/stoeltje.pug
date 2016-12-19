@@ -1,0 +1,35 @@
+doctype html
+html
+	head
+		- var title = 'Register'
+		include ./templates/head.pug
+	
+	body
+		include ./templates/nav.pug
+
+		main
+			div.ui.container
+				div.ui.stackable.grid
+					//- Empty column for offset
+					div.six.wide.column 
+					div.ten.wide.column
+						.ui.large.card#stoeltje
+							.image
+								img(src='uploads/60274c843fdbce4fe13e4416fbbffeb2')
+							.content
+								a.header Witte leren bank
+								.meta
+									span.date Keynesplein 1
+								.description
+									| Ik zag deze bankstaan op de hoek van de straat. Hij is goede staat!
+							.extra.content
+								a
+									i.wait.icon
+									|       DO 19:50 - 15.12.2016
+
+		include ./templates/footer.pug
+
+		include ./templates/scripts.pug
+		s
+		script.
+	

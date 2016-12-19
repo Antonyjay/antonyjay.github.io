@@ -10,8 +10,8 @@ function initMap() {
 		})
 
 		var locations = [
-		{title: 'Centraal', 	location: {lat: 52.379189, lng: 4.899431 }, picture: '0cdce8b6a0f08839f379bced61162dae' },
-		{title: 'Noord', 		location: {lat: 52.395728 , lng: 4.966210}, picture: '8aa8259065d812a3ef2a40baddce5478' }]
+		{title: 'Grijze bank', 	location: {lat: 52.379189, lng: 4.899431 }, picture: '0cdce8b6a0f08839f379bced61162dae' },
+		{title: 'Knuffel', 		location: {lat: 52.395728 , lng: 4.966210}, picture: '8aa8259065d812a3ef2a40baddce5478' }]
 
 
 		var largeInfowindow = new google.maps.InfoWindow()
@@ -51,7 +51,7 @@ function initMap() {
 
 					if (largeInfowindow.marker != marker) {
 						largeInfowindow.marker = marker
-						largeInfowindow.setContent ('<IMG BORDER="0" ALIGN="Left" SRC="/../uploads/'+ locations[i].picture +'"> <div ALIGN="center">'+ marker.title + '</div>')
+						largeInfowindow.setContent ('<a href="/wittebank"><IMG  BORDER="0" ALIGN="Left" SRC="/../uploads/'+ locations[i].picture +'"> </a> <div ALIGN="center">'+ marker.title + '</div>')
 						largeInfowindow.open (map,marker)
 						// // Make sure the marker property  is cleared if the window is closed
 						// largeInfowindow.addListener('closeclick', function(){	

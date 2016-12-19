@@ -47,11 +47,11 @@ db.conn.sync({force:true}).then( conn =>{
 	})
 
 	db.Bulk.create({
-		latitude: 	'52.3411818',
-		longitude: 	'4.8238265',
-		title: 		'HOOOI',
-		summary: 	'Hoe is het',
-		picture: 	'0cdce8b6a0f08839f379bced61162dae'
+		latitude: 	'52.353337',
+		longitude: 	'4.944006',
+		title: 		'Tuinstoel',
+		summary: 	'Deze stoel zag ik net staan op het Archimedesplantsoen. Zoals je ziet is hij nog een goede staat. Zonde om weg te gooien!',
+		picture: 	'60274c843fdbce4fe13e4416fbbffeb2'
 	})
 
 	db.Bulk.create({

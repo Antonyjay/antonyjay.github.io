@@ -111,3 +111,17 @@ footer {
 #map {
     height: 600px;
 }
+
+#submitformat {
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+
+#stoeltje {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#mappadding {
+    padding-top: 50px;
+}

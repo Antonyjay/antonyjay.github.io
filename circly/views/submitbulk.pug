@@ -1,0 +1,43 @@
+doctype html
+html
+	head
+		- var title = 'Register'
+		include ./templates/head.pug
+	
+	body
+		include ./templates/nav.pug
+
+		main
+			div.ui.container
+				div#submitformat.ui.stackable.grid
+					//- Empty column for offset
+					div.three.wide.column 
+					div.ten.wide.column
+						h1 Submit your diamonds from the street!
+						form.ui.form(method="post" action= '/submitbulk' enctype="multipart/form-data")
+							h4.ui.dividing.header Title
+							div.field
+		
+								input#title(type="text" name="title" placeholder="Think of a describtive title")
+
+							h4.ui.dividing.header Picture
+							div.field
+							
+									div.two.fields
+										div.field
+											input#picture(type="file" name="picture")
+											input#sendLong(type="hidden" name="longitude")
+											input#sendLat(type="hidden" name="latitude")
+							h4.ui.dividing.header Summary			
+							div.field
+						
+								input#summary(type="text" name="summary" placeholder="Give a short summary of what you see")
+
+							button#submit.ui.button Submit
+							div.ui.error.message
+							if error
+								p #{error}
+		footer
+			include ./templates/footer.pug
+
+		include ./templates/scripts.pug

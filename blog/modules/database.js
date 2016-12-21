@@ -1,6 +1,7 @@
 // Container object
 var db = { }
 
+// require the needed libraries
 const bcrypt	= 	require ('bcrypt')
 const Sequelize = 	require ('sequelize')
 
@@ -45,8 +46,8 @@ db.Comment.belongsTo(db.User)
 //create a user and destroy it
 db.conn.sync({force: true}).then(function () {
 	db.Post.create({
-		title: "Een verhaal",
-		message: " Er was eens een klein prinsje "
+		title: "Lang geleden..",
+		message: " Was er eens een klein prinsesje "
 	})
 	db.Post.create({
 		title: "Liefdesbriefje",

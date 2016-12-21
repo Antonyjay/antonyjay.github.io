@@ -7,7 +7,7 @@ $(document).ready(function() {
 function createDucks (count) {
 	var delay = 0
 	for (var i = 0; i < count ; i++) {
-		var duck = $('<img src="ducky.png">') 
+		var duck = $('<img src="roar.png">') 
 		duck.css({
 			position: 'absolute',
 			left: 0,
@@ -17,7 +17,7 @@ function createDucks (count) {
 		duck.appendTo("#duck")
 		delay = delay + 800
 		duck.hide().delay(delay).show(1).animate({"left": screenWidth}, {
-			duration: 5000,
+			duration: 3000,
 			easing: "linear",
 			complete: function (){
 				$(this).remove()

@@ -34,7 +34,7 @@ router.get ('/message', function (request, response) {
 	})
 })
 
-//rendering the ownpost by including the necessary info from the database
+//rendering the ownpost page by including the necessary info from the database
 router.get ('/ownposts', function (request, response) {
 	let user = request.session.user
 	if (user === undefined) {

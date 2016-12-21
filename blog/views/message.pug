@@ -5,16 +5,16 @@ html
 	body
 		nav
 			.nav-wrapper
-				a.brand-logo(href='/') Fijn Blogje
-				ul#nav-mobile.right.hide-on-med-and-down
+				a.brand-logo.left(href='/') Antony's Blog
+				ul#nav-mobile.right
 					li
-						a(href='/ownposts') View my posts
+						a(href='/profile') Post
+					li
+						a(href='/ownposts') View own posts
 					li
 						a(href='/allposts') View all posts
 					li
-						a(href='/profile') Make a Post	
-					li
-						a(href='/logout') log out	
+						a(href='/logout') log out
 	main
 		each thing in posts
 
@@ -25,7 +25,7 @@ html
 							h3 #{thing.title} 
 							h5 #{thing.message}
 							p.commentsection
-								form#commentform(action='/comments' method='post' id=thing.id)
+								form(action='/comments' method='post' id=thing.id)
 									input.comments(name='comment' placeholder='Leave a comment' type='text')
 									input(name="post_id", value=thing.id, type="text", hidden)
 									input(type="submit", hidden)
